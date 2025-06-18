@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import CurrentWeather from "./features/current-weather";
+import classes from "./App.module.css";
+import DockRightIcon from "./assets/dock-right.svg?react";
+import { useState } from "react";
+import WidgetsGrid from "./components/widgets-grid";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [asideOpen, setAsideOpen] = useState(true);
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <section data-aside-open={asideOpen} className={classes.layout}>
+      <aside data-open={asideOpen} className={classes.aside}></aside>
+      <header className={classes.header}>
+        <button
+          onClick={() => setAsideOpen(!asideOpen)}
+          className="aside-toggle"
+        >
+          <DockRightIcon />
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      </header>
+      <main className={classes.main}>
+        <CurrentWeather />
+        <WidgetsGrid />
+      </main>
+    </section>
+  );
 }
 
-export default App
+export default App;
