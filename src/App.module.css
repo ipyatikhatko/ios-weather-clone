@@ -28,6 +28,7 @@
 }
 
 .main {
+  overflow: auto;
   display: grid;
   grid-template-columns: subgrid;
   gap: 1rem;
@@ -44,6 +45,8 @@
   justify-content: space-between;
   padding: 0 1rem;
   height: 100%;
+  transition: opacity grid-template-columns 0.5s;
+  opacity: 1;
   & button {
     display: grid;
     place-content: center;
@@ -56,6 +59,24 @@
     &:hover {
       background-color: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(2px);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .layout {
+    grid-template-columns: minmax(0, 0px) 1fr;
+    grid-template-rows: 0px auto;
+
+    .main {
+      grid-template-columns: auto;
+      max-width: 90%;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    .header {
+      opacity: 0;
     }
   }
 }

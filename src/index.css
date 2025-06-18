@@ -44,6 +44,10 @@ body {
     appearance: none;
     border: none;
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer fonts {
