@@ -1,1 +1,1 @@
-export { default } from "./components/CurrentWeather";
+export { default } from "./components/organisms/current-weather";

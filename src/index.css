@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap");
 
 @property --weather-gradient-top {
-  initial-value: rgb(55, 128, 218);
+  initial-value: rgb(26, 88, 163);
   inherits: false;
   syntax: "<color>";
 }
 
 @property --weather-gradient-bottom {
-  initial-value: skyblue;
+  initial-value: rgb(133, 172, 204);
   inherits: false;
   syntax: "<color>";
 }
@@ -18,7 +18,7 @@
     var(--weather-gradient-top),
     var(--weather-gradient-bottom)
   );
-  --glass-bg: rgba(55, 128, 218, 0.531);
+  --glass-bg: rgba(0, 93, 175, 0.315);
 }
 
 * {

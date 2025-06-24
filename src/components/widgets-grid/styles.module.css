@@ -14,9 +14,7 @@
 .glass {
   border-radius: 8px;
   background: var(--glass-bg);
-  backdrop-filter: blur(45px);
-  box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.02),
-    inset -2px -2px 0px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(50px);
 }
 
 .forecast-hourly {

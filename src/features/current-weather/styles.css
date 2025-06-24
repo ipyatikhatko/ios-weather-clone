@@ -1,0 +1,50 @@
+.current-weather-grid {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: 2fr 2fr;
+  gap: 0.5rem 1rem;
+  color: white;
+  transition: all 0.5s;
+
+  .city {
+    font-weight: 500;
+    font-size: 2rem;
+    grid-column: span 2;
+  }
+
+  .temperature {
+    &.current {
+      position: relative;
+      font-weight: 100;
+      font-size: 3.75rem;
+      line-height: 0.95;
+      &::after {
+        position: absolute;
+        content: "°";
+      }
+      grid-column: span 2;
+    }
+
+    &.high,
+    &.low {
+      font-weight: 300;
+      font-size: 1rem;
+      &::after {
+        content: "°";
+      }
+      place-self: start;
+    }
+
+    &.high {
+      place-self: end;
+    }
+  }
+
+  .description {
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: capitalize;
+    grid-column: span 2;
+  }
+}
